@@ -21,15 +21,22 @@ class UserTest < ActiveSupport::TestCase
 
   test "Users must have emails" do
     user_1 = users(:student)
-    user_2 = users(:no_email)
+    user_2 = User.create(password: "monkey")
     assert user_1
     refute user_2
   end
 
   test "Users must have passwords" do
     user_1 = users(:student)
-    user_2 = users(:no_password)
+    user_2 = User.create(email: "geoffrey.s.arnold@gmail.com")
     assert user_1
     refute user_2
+  end
+
+  test "Users cannot have same email" do
+    user_1 = users(:student)
+    user_2 = User.create(email: "geoffrey.s.arnold@gmail.com", password: "monkey")
+    assert user_1
+    assert user_2
   end
 end

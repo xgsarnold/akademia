@@ -5,17 +5,17 @@ geoff:
   last_name: "Arnold"
   birthdate: 1988-10-15
 
-no_birthdate:
-  first_name: "Geoff"
-  last_name: "Arnold"
-  birthdate:
-
-no_fname:
-  first_name:
-  last_name: "Arnold"
-  birthdate: 1988-10-15
-
-no_lname:
-  first_name: "Geoff"
-  last_name:
-  birthdate: 1988-10-15
+# no_birthdate:
+#   first_name: "Geoff"
+#   last_name: "Arnold"
+#   birthdate:
+#
+# no_fname:
+#   first_name:
+#   last_name: "Arnold"
+#   birthdate: 1988-10-15
+#
+# no_lname:
+#   first_name: "Geoff"
+#   last_name:
+#   birthdate: 1988-10-15
