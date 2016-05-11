@@ -1,3 +1,3 @@
 class User < ActiveRecord::Base
-  belongs_to :person_id, polymorphic: true
+  belongs_to :person, polymorphic: true
 end

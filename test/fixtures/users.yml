@@ -3,13 +3,13 @@
 one:
   email: MyString
   password: MyString
-  person_id_id: 
-  person_id_type: Person
+  person_id: 
+  person_type: Person
   person_type: MyString
 
 two:
   email: MyString
   password: MyString
-  person_id_id: 
-  person_id_type: Person
+  person_id: 
+  person_type: Person
   person_type: MyString
