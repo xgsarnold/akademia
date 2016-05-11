@@ -4,7 +4,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email
       t.string :password
       t.references :person, polymorphic: true, index: true
-      t.string :person_type
 
       t.timestamps null: false
     end

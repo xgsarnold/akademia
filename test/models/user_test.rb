@@ -6,14 +6,30 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "Users belong to students" do
-    student = Student.new(first_name: "Geoff", last_name: "Arnold", birthdate: "1988-10-15")
-    user = User.new(email: "geoffrey.s.arnold@gmail.com", password: "monkey", person_id: student.id, person_type: "Student")
+    student = students(:geoff)
+    user = users(:student)
+    student.users << user
     assert_equal student, user.person
   end
 
   test "Users belong to teachers" do
-    teacher = Teacher.new(first_name: "Geoff", last_name: "Arnold", birthdate: "1988-10-15")
-    user = User.new(email: "geoffrey.s.arnold@gmail.com", password: "monkey", person_id: student.id, person_type: "Student")
-    assert_equal user, user.person
+    teacher = teachers(:geoff)
+    user = users(:teacher)
+    teacher.users << user
+    assert_equal teacher, user.person
+  end
+
+  test "Users must have emails" do
+    user_1 = users(:student)
+    user_2 = users(:no_email)
+    assert user_1
+    refute user_2
+  end
+
+  test "Users must have passwords" do
+    user_1 = users(:student)
+    user_2 = users(:no_password)
+    assert user_1
+    refute user_2
   end
 end

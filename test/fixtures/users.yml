@@ -1,15 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  email: MyString
-  password: MyString
-  person_id: 
-  person_type: Person
-  person_type: MyString
+student:
+  email: "geoffrey.s.arnold@gmail.com"
+  password: "monkey"
+  person_id:
+  person_type: "Student"
 
-two:
-  email: MyString
-  password: MyString
-  person_id: 
-  person_type: Person
-  person_type: MyString
+teacher:
+  email: "geoffrey.s.arnold@gmail.com"
+  password: "monkey"
+  person_id:
+  person_type: "Teacher"
+
+no_email:
+  email:
+  password: "monkey"
+  person_id:
+  person_type: "Teacher"
+
+no_password:
+  email: "geoffrey.s.arnold@gmail.com"
+  password:
+  person_id:
+  person_type: "Teacher"

@@ -23,10 +23,6 @@
     <%= f.label :person_id %>
     <%= f.grouped_collection_select :person_id, [Teacher, Student], :all, :model_name, :to_global_id, lambda {|person| person.first_name + " " + person.last_name},  prompt: "Select Person" %>
   </div>
-  <div class="field">
-    <%= f.label :person_type %><br>
-    <%= f.text_field :person_type %>
-  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

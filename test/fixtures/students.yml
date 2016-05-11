@@ -1,11 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  first_name: MyString
-  last_name: MyString
-  birthdate: 2016-05-11
+geoff:
+  first_name: "Geoff"
+  last_name: "Arnold"
+  birthdate: 1988-10-15
 
-two:
-  first_name: MyString
-  last_name: MyString
-  birthdate: 2016-05-11
+no_birthdate:
+  first_name: "Geoff"
+  last_name: "Arnold"
+  birthdate:
+
+no_fname:
+  first_name:
+  last_name: "Arnold"
+  birthdate: 1988-10-15
+
+no_lname:
+  first_name: "Geoff"
+  last_name:
+  birthdate: 1988-10-15
