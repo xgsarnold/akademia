@@ -9,7 +9,7 @@ class DashboardController < ApplicationController
     @courses = @teacher.courses
   end
 
-  def professors
+  def teachers
     user = User.find_by(id: params[:id])
     @teacher = Teacher.find_by(id: user.person_id)
     @courses = @teacher.courses

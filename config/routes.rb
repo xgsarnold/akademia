@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  root to: 'dashboard#students'
+
   get 'dashboard/students'
-  get 'dashboard/professors'
+  get 'dashboard/teachers'
 
   resources :assignments
   resources :courses
