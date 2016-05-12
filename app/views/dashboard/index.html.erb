@@ -1,0 +1,5 @@
+<% if @user.person_type == "Student" %>
+  <%= render 'students' %>
+<% else %>
+  <%= render 'teachers' %>
+<% end %>

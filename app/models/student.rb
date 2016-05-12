@@ -14,4 +14,12 @@ class Student < ActiveRecord::Base
     end
     weighted_grades.sum
   end
+
+  def my_courses
+    courses = []
+    self.course_registrations.each do |r|
+      courses << Course.find_by(id: r.course_id)
+    end
+    courses
+  end
 end

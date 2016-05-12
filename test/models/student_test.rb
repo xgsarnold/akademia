@@ -44,4 +44,11 @@ class StudentTest < ActiveSupport::TestCase
     course.assignments << assignment_2
     assert_equal 0.7625, student.course_grade(course.id)
   end
+
+  test "Find student courses" do
+    student = students(:geoff)
+    course_1 = courses(:philosophy)
+    course_2 = courses(:psychology)
+    assert_equal [course_1, course_2], student.my_courses
+  end
 end
