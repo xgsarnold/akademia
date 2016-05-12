@@ -5,19 +5,35 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
   def new
     super
-    if person = Teacher.where(first_name: params[:first_name], last_name: params[:last_name], birthdate: params[:birthdate]).first
-      User.create(email: params[:email], password: params[:password], person_id: person.id, person_type: person.class)
-    elsif person = Student.where(first_name: params[:first_name], last_name: params[:last_name], birthdate: params[:birthdate]).first
-      User.create(email: params[:email], password: params[:password], person_id: person.id, person_type: person.class)
+  end
+
+  # POST /resource
+  def create
+    birthdate = Date.new params[:birthdate]['(1i)'].to_i, params[:birthdate]['(2i)'].to_i, params[:birthdate]['(3i)'].to_i
+    if person = Teacher.where(first_name: params[:first_name], last_name: params[:last_name], birthdate: birthdate).first
+      @user = person.users.new(user_params)
+      respond_to do |format|
+        if @user.save
+          sign_in @user
+          format.html { redirect_to dashboard_teachers_path(@user), notice: "User was successfully created." }
+        else
+          format.html { render :new }
+        end
+      end
+    elsif person = Student.where(first_name: params[:first_name], last_name: params[:last_name], birthdate: birthdate).first
+      @user = person.users.new(user_params)
+      respond_to do |format|
+        if @user.save
+          sign_in @user
+          format.html { redirect_to dashboard_students_path(@user), notice: "User was successfully created." }
+        else
+          format.html { render :new }
+        end
+      end
     else
       flash[:notice] = "No student or teacher matches the names and birthdate you provided. Please try again or contact the administrator."
     end
   end
-
-  # POST /resource
-  # def create
-  #   super
-  # end
 
   # GET /resource/edit
   # def edit
@@ -64,4 +80,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_user
+      @user = User.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def user_params
+      params.require(:user).permit(:email, :password, :person_id, :person_type)
+    end
 end

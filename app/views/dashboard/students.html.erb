@@ -1,4 +1,4 @@
-<% if user.person_type == "Student" %>
+<% if current_user.person_type == "Teacher" %>
   <% redirect_to dashboard_teachers_path %>
 <% else %>
   <header class="header">

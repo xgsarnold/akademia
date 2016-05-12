@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root to: 'dashboard#students'
+  devise_for :users, controllers: { :registrations => 'users/registrations' }
+
+  # root to: 'dashboard#students'
 
   get 'dashboard/students'
   get 'dashboard/teachers'

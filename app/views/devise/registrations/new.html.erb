@@ -4,6 +4,21 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    First Name<br />
+    <%= text_field_tag :first_name %>
+  </div>
+
+  <div class="field">
+    Last Name<br />
+    <%= text_field_tag :last_name %>
+  </div>
+
+  <div class="field">
+    Birthdate<br />
+    <%= date_select :birthdate, nil, options = { include_blank: true, start_year: 1920, end_year: Time.now.year } %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
