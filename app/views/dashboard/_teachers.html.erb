@@ -1,0 +1,22 @@
+<div class="field">
+  Name: <%= @teacher.first_name + " " + @teacher.last_name%>
+</div>
+<div class="field">
+  Birthdate: <%= @teacher.birthdate %>
+</div>
+
+<table>
+  <tr>
+    <th>Course Name:</th>
+    <th>Course Roster:</th>
+    <th>Course Grade:</th>
+  </tr>
+
+  <% @courses.each do |c| %>
+    <tr>
+      <td><%= c.course_name %></td>
+      <td><%= @student.classmates(c.id).pluck(:first_name, :last_name) %></td>
+      <td><%= @student.course_grade(c.id) %></td>
+    </tr>
+  <% end %>
+</table>
