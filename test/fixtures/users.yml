@@ -11,21 +11,3 @@ teacher:
   password: "monkey"
   person_id:
   person_type: "Teacher"
-
-# no_email:
-#   email:
-#   password: "monkey"
-#   person_id:
-#   person_type: "Teacher"
-#
-# no_password:
-#   email: "geoffrey.s.arnold@gmail.com"
-#   password:
-#   person_id:
-#   person_type: "Teacher"
-#
-# identical:
-#     email: "geoffrey.s.arnold@gmail.com"
-#     password: "monkey"
-#     person_id:
-#     person_type: "Student"
