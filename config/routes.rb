@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'dashboard/index'
+  get 'dashboard/students'
+  get 'dashboard/professors'
 
   resources :assignments
   resources :courses
