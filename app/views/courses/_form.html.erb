@@ -16,12 +16,18 @@
     <%= f.text_field :course_name %>
   </div>
   <div class="field">
-    <%= f.label :semester %><br>
-    <%= f.text_field :semester %>
+    <%= f.radio_button :semester, "Summer" %>
+    <%= f.label :semester, "Summer", value: "Summer" %><br>
+    <%= f.radio_button :semester, "Fall" %>
+    <%= f.label :semester, "Fall", value: "Fall" %><br>
+    <%= f.radio_button :semester, "Winter" %>
+    <%= f.label :semester, "Winter", value: "Winter" %><br>
+    <%= f.radio_button :semester, "Spring" %>
+    <%= f.label :semester, "Spring", value: "Spring" %><br>
   </div>
   <div class="field">
     <%= f.label :year %><br>
-    <%= f.date_select :year %>
+    <%= f.date_select :year, { discard_month: true, discard_day: true, start_year: Time.now.year } %>
   </div>
   <div class="field">
     <%= f.label :teacher_id %><br>

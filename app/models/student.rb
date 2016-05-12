@@ -6,4 +6,12 @@ class Student < ActiveRecord::Base
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :birthdate, presence: true
+
+  def course_grade(course_id)
+    weighted_grades = []
+    self.assignments.where(course_id: course_id).each do |a|
+      weighted_grades << a.grade * a.weight
+    end
+    weighted_grades.sum
+  end
 end

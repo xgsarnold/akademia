@@ -32,4 +32,16 @@ class StudentTest < ActiveSupport::TestCase
     assert student_1
     assert_not student_2.save, "Saved student without last name."
   end
+
+  test "Students can get course grade from assignment grades" do
+    student = students(:geoff)
+    course = courses(:philosophy)
+    assignment_1 = assignments(:cave)
+    assignment_2 = assignments(:republic)
+    student.assignments << assignment_1
+    student.assignments << assignment_2
+    course.assignments << assignment_1
+    course.assignments << assignment_2
+    assert_equal 0.7625, student.course_grade(course.id)
+  end
 end
