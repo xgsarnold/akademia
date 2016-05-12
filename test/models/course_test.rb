@@ -22,17 +22,17 @@ class CourseTest < ActiveSupport::TestCase
   end
 
   test "Courses must have course names" do
-    course = Course.new(course_name: "Philosophy", semester: "Fall", year: Time.now.year)
+    course = Course.new(semester: "Fall", year: Time.now.year)
     assert_not course.save, "Save course without course name."
   end
 
   test "Courses must have semester" do
-    course = Course.new(course_name: "Philosophy", semester: "Fall", year: Time.now.year)
+    course = Course.new(course_name: "Philosophy", year: Time.now.year)
     assert_not course.save, "Save course without semester."
   end
 
   test "Courses must have year" do
-    course = Course.new(course_name: "Philosophy", semester: "Fall", year: Time.now.year)
+    course = Course.new(course_name: "Philosophy", semester: "Fall")
     assert_not course.save, "Save course without year."
   end
 end
