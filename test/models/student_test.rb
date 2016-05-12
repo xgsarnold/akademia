@@ -51,4 +51,12 @@ class StudentTest < ActiveSupport::TestCase
     course_2 = courses(:psychology)
     assert_equal [course_1, course_2], student.my_courses
   end
+
+  test "Find student classmates" do
+    student_1 = students(:geoff)
+    student_2 = students(:scott)
+    student_3 = students(:michael)
+    course = courses(:philosophy)
+    assert_equal [student_2, student_3], student_1.classmates(course.id)
+  end
 end

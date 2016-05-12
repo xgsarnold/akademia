@@ -15,3 +15,7 @@ scott_philosophy:
 scott_psychology:
   student: scott
   course: psychology
+
+michael_philosophy:
+  student: michael
+  course: philosophy

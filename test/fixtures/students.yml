@@ -4,3 +4,13 @@ geoff:
   first_name: "Geoff"
   last_name: "Arnold"
   birthdate: 1988-10-15
+
+scott:
+  first_name: "Scott"
+  last_name: "Arnold"
+  birthdate: 1959-1-12
+
+michael:
+  first_name: "Michael"
+  last_name: "Arnold"
+  birthdate: 1996-3-05

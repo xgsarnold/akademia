@@ -22,4 +22,8 @@ class Student < ActiveRecord::Base
     end
     courses
   end
+
+  def classmates(course_id)
+    Student.joins(:course_registrations).where("course_id = #{course_id}")
+  end
 end
