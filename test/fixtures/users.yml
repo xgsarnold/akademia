@@ -3,11 +3,11 @@
 student:
   email: "geoffrey.s.arnold@gmail.com"
   password: "monkey"
-  person_id:
+  person: geoff
   person_type: "Student"
 
 teacher:
   email: "geoffrey.s.arnold@gmail.com"
   password: "monkey"
-  person_id:
+  person: aristotle
   person_type: "Teacher"

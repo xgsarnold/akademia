@@ -1,9 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  student_id: 1
-  course_id: 1
+geoff_philosophy:
+  student: geoff
+  course: philosophy
 
-two:
-  student_id: 1
-  course_id: 1
+geoff_psychology:
+  student: geoff
+  course: psychology
+
+scott_philosophy:
+  student: scott
+  course: philosophy
+
+scott_psychology:
+  student: scott
+  course: psychology

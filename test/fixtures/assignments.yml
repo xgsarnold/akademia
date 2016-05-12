@@ -1,19 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  assignment_name: MyString
-  grade: 9.99
-  weight: 9.99
-  assigned_at: 2016-05-11 22:05:51
+cave:
+  assignment_name: "Plato Cave"
+  grade: 0.95
+  weight: 0.25
+  assigned_at: 2016-05-1 22:05:51
   due_at: 2016-05-11 22:05:51
-  course_id: 1
-  student_id: 1
+  course: philosophy
+  student: geoff
 
-two:
-  assignment_name: MyString
-  grade: 9.99
-  weight: 9.99
-  assigned_at: 2016-05-11 22:05:51
-  due_at: 2016-05-11 22:05:51
-  course_id: 1
-  student_id: 1
+republic:
+  assignment_name: "Plato Republic"
+  grade: 0.70
+  weight: 0.75
+  assigned_at: 2016-05-2 22:05:51
+  due_at: 2016-05-12 22:05:51
+  course: philosophy
+  student: geoff

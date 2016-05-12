@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class CourseRegistrationTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "Course registration exists" do
+    assert CourseRegistration
+  end
 end

@@ -13,7 +13,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "Users belong to teachers" do
-    teacher = teachers(:geoff)
+    teacher = teachers(:aristotle)
     user = users(:teacher)
     teacher.users << user
     assert_equal teacher, user.person

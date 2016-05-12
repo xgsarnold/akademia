@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  course_name: MyString
-  semester: MyString
-  year: 2016-05-11
-  teacher_id: 1
+philosophy:
+  course_name: "Plato Philosophy"
+  semester: "Fall"
+  year: 2015-9-1
+  teacher: aristotle
 
-two:
-  course_name: MyString
-  semester: MyString
-  year: 2016-05-11
-  teacher_id: 1
+psychology:
+  course_name: "Psychology 101"
+  semester: "Spring"
+  year: 2016-01-11
+  teacher: aristotle

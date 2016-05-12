@@ -1,6 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-geoff:
+aristotle:
   first_name: "Geoff"
   last_name: "Arnold"
   birthdate: 1988-10-15
