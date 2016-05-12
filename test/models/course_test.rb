@@ -35,4 +35,12 @@ class CourseTest < ActiveSupport::TestCase
     course = Course.new(course_name: "Philosophy", semester: "Fall")
     assert_not course.save, "Save course without year."
   end
+
+  test "Courses can return student rosters" do
+    course = courses(:philosophy)
+    student_1 = students(:geoff)
+    student_2 = students(:scott)
+    student_3 = students(:michael)
+    assert_equal [student_1.first_name, student_2.first_name, student_3.first_name].sort, course.roster.pluck(:first_name).sort
+  end
 end

@@ -57,6 +57,6 @@ class StudentTest < ActiveSupport::TestCase
     student_2 = students(:scott)
     student_3 = students(:michael)
     course = courses(:philosophy)
-    assert_equal [student_2, student_3], student_1.classmates(course.id)
+    assert_equal [student_1.first_name, student_2.first_name, student_3.first_name].sort, student_1.classmates(course.id).pluck(:first_name).sort
   end
 end
