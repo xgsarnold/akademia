@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  assignment_name: MyString
+  grade: 9.99
+  weight: 9.99
+  assigned_at: 2016-05-11 22:05:51
+  due_at: 2016-05-11 22:05:51
+  course_id: 1
+  student_id: 1
+
+two:
+  assignment_name: MyString
+  grade: 9.99
+  weight: 9.99
+  assigned_at: 2016-05-11 22:05:51
+  due_at: 2016-05-11 22:05:51
+  course_id: 1
+  student_id: 1
