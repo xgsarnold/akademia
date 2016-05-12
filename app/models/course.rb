@@ -9,4 +9,8 @@ class Course < ActiveRecord::Base
   validates :course_name, presence: true
   validates :semester, presence: true
   validates :year, presence: true
+
+  def roster
+    Student.joins(:course_registrations).where("course_id = #{self.id}")
+  end
 end
