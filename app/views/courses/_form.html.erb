@@ -15,6 +15,7 @@
     <%= f.label :course_name %><br>
     <%= f.text_field :course_name %>
   </div>
+  <!-- User radio button to prevent users from entering invalid semester value -->
   <div class="field">
     <%= f.radio_button :semester, "Summer" %>
     <%= f.label :semester, "Summer", value: "Summer" %><br>
@@ -31,7 +32,7 @@
   </div>
   <div class="field">
     <%= f.label :teacher_id %><br>
-    <%= f.number_field :teacher_id %>
+    <%= f.select :teacher_id, options_for_select(Teacher.all.map{|t|[t.first_name, t.last_name, t.id]}) %>
   </div>
   <div class="actions">
     <%= f.submit %>

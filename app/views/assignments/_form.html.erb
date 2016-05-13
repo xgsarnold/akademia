@@ -17,11 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :grade %><br>
-    <%= f.text_field :grade %>
+    <%= f.number_field :grade %>
   </div>
   <div class="field">
     <%= f.label :weight %><br>
-    <%= f.text_field :weight %>
+    <%= f.number_field :weight %>
   </div>
   <div class="field">
     <%= f.label :assigned_at %><br>
@@ -33,11 +33,11 @@
   </div>
   <div class="field">
     <%= f.label :course_id %><br>
-    <%= f.number_field :course_id %>
+    <%= f.select :course_id, options_for_select(Course.all.map{|c| [c.course_name, c.id]}) %>
   </div>
   <div class="field">
     <%= f.label :student_id %><br>
-    <%= f.number_field :student_id %>
+    <%= f.select :student_id, options_for_select(Student.all.map{|s| [s.first_name, s.last_name, s.id]}) %>
   </div>
   <div class="actions">
     <%= f.submit %>

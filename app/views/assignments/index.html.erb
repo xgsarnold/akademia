@@ -20,12 +20,12 @@
     <% @assignments.each do |assignment| %>
       <tr>
         <td><%= assignment.assignment_name %></td>
-        <td><%= assignment.grade %></td>
+        <td><%= number_with_precision(assignment.grade, precision: 2) %></td>
         <td><%= assignment.weight %></td>
         <td><%= assignment.assigned_at %></td>
         <td><%= assignment.due_at %></td>
-        <td><%= assignment.course_id %></td>
-        <td><%= assignment.student_id %></td>
+        <td><%= assignment.course.course_name %></td>
+        <td><%= assignment.student.first_name + " " + assignment.student.last_name %></td>
         <td><%= link_to 'Show', assignment %></td>
         <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
         <td><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>

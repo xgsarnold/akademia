@@ -1,33 +1,29 @@
-<% if current_user && current_user.person_type == "Teacher" %>
-  <% redirect_to dashboard_teachers_url %>
-<% else %>
-  <header class="header">
-    <h1 class="header__heading" id="page-title">
-      Name: <%= @student.first_name + " " + @student.last_name%> |
-      Birthdate: <%= @student.birthdate %>
-    </h1>
-  </header>
+<header class="header">
+  <h1 class="header__heading" id="page-title">
+    Name: <%= @student.first_name + " " + @student.last_name%> |
+    Birthdate: <%= @student.birthdate %>
+  </h1>
+</header>
 
-  <table class="collection-data" aria-labelledby="page-title">
-    <thead>
-      <tr>
-        <th class="cell-label" scope="col">Course Name:</th>
-        <th class="cell-label" scope="col">Semester:</th>
-        <th class="cell-label" scope="col">Course Professor:</th>
-        <th class="cell-label" scope="col">Course Roster:</th>
-        <th class="cell-label" scope="col">Course Grade:</th>
-      </tr>
-    </thead>
+<table class="collection-data" aria-labelledby="page-title">
+  <thead>
+    <tr>
+      <th class="cell-label" scope="col">Course Name:</th>
+      <th class="cell-label" scope="col">Semester:</th>
+      <th class="cell-label" scope="col">Course Professor:</th>
+      <th class="cell-label" scope="col">Course Roster:</th>
+      <th class="cell-label" scope="col">Course Grade:</th>
+    </tr>
+  </thead>
 
-    <tbody>
-    <% @courses.each do |c| %>
-      <tr class="table__row" tabindex="0">
-        <td class="cell-data"><%= c.course_name %></td>
-        <td class="cell-data"><%= c.semester + " " + c.year.year.to_s %></td>
-        <td class="cell-data"><%= c.teacher.first_name + " " + c.teacher.last_name %></td>
-        <td class="cell-data"><%= collection_select :student, :id, @student.classmates(c.id), :id, lambda {|person| person.first_name + " " + person.last_name}, readonly: true, include_blank: "Click To View Classmates", selected: :blank %></td>
-        <td class="cell-data"><%= (@student.course_grade(c.id).to_f * 100).to_s + "%" %></td>
-      </tr>
-    <% end %>
-  </table>
-<% end %>
+  <tbody>
+  <% @courses.each do |c| %>
+    <tr class="table__row" tabindex="0">
+      <td class="cell-data"><%= c.course_name %></td>
+      <td class="cell-data"><%= c.semester + " " + c.year.year.to_s %></td>
+      <td class="cell-data"><%= c.teacher.first_name + " " + c.teacher.last_name %></td>
+      <td class="cell-data"><%= collection_select :student, :id, @student.classmates(c.id), :id, lambda {|person| person.first_name + " " + person.last_name}, readonly: true, include_blank: "Click To View Classmates", selected: :blank %></td>
+      <td class="cell-data"><%= number_with_precision((@student.course_grade(c.id) * 100), precision: 0).to_s + "%" %></td>
+    </tr>
+  <% end %>
+</table>

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'dashboard/students'
   get 'dashboard/teachers'
 
+  resources :course_registrations
   resources :assignments
   resources :courses
   resources :users

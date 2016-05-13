@@ -7,7 +7,7 @@
 
 <p>
   <strong>Grade:</strong>
-  <%= @assignment.grade %>
+  <%= number_with_precision(@assignment.grade, precision: 2) %>
 </p>
 
 <p>
@@ -27,12 +27,12 @@
 
 <p>
   <strong>Course:</strong>
-  <%= @assignment.course_id %>
+  <%= @assignment.course.course_name %>
 </p>
 
 <p>
   <strong>Student:</strong>
-  <%= @assignment.student_id %>
+  <%= @assignment.student.first_name + " " + @assignment.student.last_name %>
 </p>
 
 <%= link_to 'Edit', edit_assignment_path(@assignment) %> |

@@ -6,13 +6,8 @@
 </p>
 
 <p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
-
-<p>
   <strong>Person:</strong>
-  <%= @user.person %>
+  <%= @user.person.first_name + " " + @user.person.last_name %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

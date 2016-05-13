@@ -11,6 +11,22 @@
     </div>
   <% end %>
 
+  <div class="field">
+    Student<br>
+    <%= @course_registration.student.first_name + " " + @course_registration.student.last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :student_id %><br>
+    <%= f.select :student_id, options_for_select(Student.all.map{|s|[s.first_name, s.last_name, s.id]}) %>
+  </div>
+  <div class="field">
+    Course<br>
+    <%= @course_registration.course.course_name %>
+  </div>
+  <div class="field">
+    <%= f.label :course_id %><br>
+    <%= f.select :course_id, options_for_select(Course.all.map{|c|[c.course_name, c.id]}) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -17,7 +17,7 @@
 
 <p>
   <strong>Teacher:</strong>
-  <%= @course.teacher_id %>
+  <%= @course.teacher.first_name + " " + @course.teacher.last_name %>
 </p>
 
 <%= link_to 'Edit', edit_course_path(@course) %> |
