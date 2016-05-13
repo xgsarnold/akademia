@@ -20,9 +20,11 @@
         <td><%= course.semester %></td>
         <td><%= course.year %></td>
         <td><%= course.teacher.first_name + " " + course.teacher.last_name %></td>
-        <td><%= link_to 'Show', course %></td>
-        <td><%= link_to 'Edit', edit_course_path(course) %></td>
-        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user && current_user.person_type == "Teacher" %>
+          <td><%= link_to 'Show', course %></td>
+          <td><%= link_to 'Edit', edit_course_path(course) %></td>
+          <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
