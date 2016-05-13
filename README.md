@@ -9,3 +9,5 @@ Upon logging in users are redirected to their dashboard where they can view deta
 Key URLs:
 * Teacher dashboard: dashboard/teachers
 * Student dashboard: dashboard/students
+
+Note: Unit tests are present in the test folder.

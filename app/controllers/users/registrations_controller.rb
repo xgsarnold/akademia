@@ -7,6 +7,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
     super
   end
 
+  # I extracted the devise controllers in order to customize the create action so that
+  # user registration would create a user by attaching it to a student or teacher object
+  # since I created the student and teacher models to be polymorphically associated with
+  # the user model.
+  
   # POST /resource
   def create
     birthdate = Date.new params[:birthdate]['(1i)'].to_i, params[:birthdate]['(2i)'].to_i, params[:birthdate]['(3i)'].to_i

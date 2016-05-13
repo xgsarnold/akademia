@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
 
+  # I added this method to restrict access from pages students shouldn't have access to.
+  
   def logged_in_as_teacher?
     redirect_to :back, notice: "You do not have permission to access that page." unless current_user && current_user.person_type == "Teacher"
     rescue ActionController::RedirectBackError

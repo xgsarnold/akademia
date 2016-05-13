@@ -2,6 +2,11 @@ class AddDeviseToUsers < ActiveRecord::Migration
   def self.up
     change_table(:users) do |t|
       ## Database authenticatable
+
+      # Since I implemented devise after having already created the user model
+      # I needed to comment out the commands to create user email that would otherwise
+      # duplicate fields in the table.
+
       # t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
