@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'course_registration/resources'
+
   devise_for :users, controllers: { :registrations => 'users/registrations' }
 
   root to: 'dashboard#students'

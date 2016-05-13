@@ -1,5 +1,5 @@
-<% if current_user.person_type == "Student" %>
-  <% redirect_to dashboard_students_path %>
+<% if current_user && current_user.person_type == "Student" %>
+  <% redirect_to dashboard_students_url %>
 <% else %>
   <header class="header">
     <h1 class="header__heading" id="page-title">
