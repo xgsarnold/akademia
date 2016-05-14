@@ -6,7 +6,7 @@ The app utilizes Devise authentication and is customized for the app so that cre
 
 Upon logging in users are redirected to their dashboard where they can view details specific to their account. For instance, students can see the courses for which they are registered, their course grades, classmates, as well as the course instructor their their classes. Additionally, students can view all classes being taught should they wish to contact a teacher to register for a specific course. Alternatively, teachers can view from their dashboard the classes they are teaching, class rosters, assignments for their classes. Either user can navigate between different pages depending upon their need and authorization.
 
-If you wish to test the application out, clone the repository and use the following login after migrating the database and seeding:
+If you wish to test the application out, clone the repository and use the following login after migrating the database and seeding. Otherwise, you can create a user for one of the students and/or teachers in the seed list by using the first name, last name, and birthdate found in the seed file:
 * email: geoffrey.s.arnold@gmail.com
 * password: iPrevail1105
 
